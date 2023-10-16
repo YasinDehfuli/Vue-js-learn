@@ -1,31 +1,14 @@
 <script setup>
-import TheWelcome from '@/components/TheWelcome.vue';
 
+import {useFlash} from "@/composables/useFlash";
 
-// onMounted(() =>{
-//     alert('HIIII')
-// });
-
-let message = $ref('hellow world');
-
-setTimeout(()=>{
-  message = " I HAVE BEEN CHANGED"
-},2000);
-
-let doSomething = () => {
-  alert('DOOOO IT NOW')
-}
+let {flash} = useFlash();
 
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-
-    <input type="text" v-model="message">
-    <p>{{message}}</p>
-
-    <button @click="doSomething">Click to alert
+    <button @click="flash('Success','WELL DONE','info')">Click to alert
     </button>
   </main>
 </template>

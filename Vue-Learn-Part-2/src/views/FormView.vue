@@ -1,23 +1,19 @@
 <script setup>
 
-import {ref} from "vue";
+import {useStorage} from "@/composables/useStorage";
 
-let food = ref('');
+let food =  useStorage('food');
+let age =  useStorage('age');
 
-// let age = ref('')
-
-function write(){
-  localStorage.setItem('food', food.value);
-}
 
 </script>
 
 <template>
   <main>
   <div class="about">
-    What is your favorite food ? <input type="text" v-model="food" @input="write">
+    What is your favorite food ? <input type="text" v-model="food">
     <br>
-<!--    Whats Your Age ? <input type="text" v-model="age">-->
+    Whats Your Age ? <input type="text" v-model="age">
   </div>
   </main>
 </template>

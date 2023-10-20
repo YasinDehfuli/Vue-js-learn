@@ -20,6 +20,11 @@ const router = createRouter({
       name: 'form',
       component: () => import('../views/FormView.vue')
     },
+    {
+      path: '/textarea',
+      name: 'textarea',
+      component: () => import('../views/TextArea.vue')
+    },
   ]
 })
 
